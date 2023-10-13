@@ -5,15 +5,23 @@ export default function ItemView({ icon, label, route, children }: Item) {
 	const [isClicked, setIsClicked] = useState(false);
 
 	return (
-		<div className='flex flex-col font-semibold text-blue-950 hover:bg-blue-200 p-2 rounded-md transition-all'>
-			<div className='flex justify-between w-full'>
+		<div className='flex flex-col font-semibold text-blue-950  '>
+			<div className='flex justify-between w-full hover:bg-blue-200 transition-all p-2 rounded-md '>
 				<a href={route} className='flex'>
 					<span>{icon}</span>
 					<div>{label}</div>
 				</a>
 				{children ? (
 					<button type='button' onClick={() => setIsClicked(!isClicked)}>
-						{isClicked ? <span>↓</span> : <span>↑</span>}
+						{isClicked ? (
+							<span className='px-2 text-lg font-bold rounded-md  bg-blue-100 hover:bg-blue-300 transition'>
+								↑
+							</span>
+						) : (
+							<span className='px-2 text-lg font-bold rounded-md  bg-blue-100 hover:bg-blue-300 transition'>
+								↓
+							</span>
+						)}
 					</button>
 				) : null}
 			</div>
@@ -29,4 +37,3 @@ export default function ItemView({ icon, label, route, children }: Item) {
 		</div>
 	);
 }
-/// if has children don't showup

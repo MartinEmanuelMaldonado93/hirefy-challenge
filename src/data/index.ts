@@ -15,10 +15,32 @@ export const data: Item[] = [
 		label: "Categories",
 		icon: "🎨",
 		route: "/cat",
-		children: {
-			icon: "🖥",
-			label: "lorem",
-			route: "lorem",
-		},
+		children: [
+			{
+				icon: "🍕",
+				label: "lorem",
+				route: "lorem",
+				children: {
+					icon: "🍔",
+					label: "burger",
+					route: "/food",
+				},
+			},
+			{
+				icon: "👔",
+				label: "lorem",
+				route: "lorem",
+			},
+			{
+				icon: "🖥",
+				label: "lorem",
+				route: "lorem",
+				children: {
+					icon: "🎃",
+					label: "lorem",
+					route: "lorem",
+				},
+			},
+		],
 	},
 ];
